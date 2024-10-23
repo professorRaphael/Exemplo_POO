@@ -12,7 +12,7 @@ Este projeto utiliza o framework **Swing** para criar uma interface gráfica sim
 Os dados são armazenados em um banco de dados SQLite.
 
 #### Como executar:
-- Compile e execute o projeto via linha de comando ou utilizando uma IDE (Eclipse, IntelliJ).
+- Compile e execute o projeto via linha de comando ou utilizando uma IDE (VSCode, IntelliJ).
 
 ### 2. **Projeto Web (Spring Boot)**
 Este projeto utiliza o framework **Spring Boot** para criar uma aplicação web que permite:
