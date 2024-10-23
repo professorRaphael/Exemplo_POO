@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>Lista</title>
+</head>
+<body class="bg-gray-100 flex justify-center items-center h-screen">
+    <div class="text-center">
+        <h1 class="text-3xl font-bold text-blue-600 mb-6">Lista de Pessoas</h1>
+        <ul class="mb-6 space-y-3" id="pessoas-lista">
+        </ul>
+        <div class="space-x-4">
+            <a href="/pessoas/nova" class="bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600 transition">Adicionar Nova Pessoa</a>
+            <a href="/" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition">Voltar</a>
+        </div>
+    </div>
+</body>
+
+    <script>
+        fetch('/pessoas/api')
+        .then(response => response.json())
+        .then(data => {
+            const lista = document.getElementById('pessoas-lista');
+            data.forEach(pessoa => {
+                const li = document.createElement('li');
+                li.textContent = `${pessoa.nome} (${pessoa.idade} anos, ${pessoa.altura} m)`;
+                lista.appendChild(li);
+            });
+        });
+    </script>
+</body>
+</html>
